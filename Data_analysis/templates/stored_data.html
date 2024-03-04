@@ -1,0 +1,217 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        .result-table {
+            width: 50%;
+            margin: 20px auto; /* Center the table */
+            border-collapse: collapse;
+        }
+        .result-table th {
+            background-color: #b8d3f8; /* Green background for header */
+            color: #fff; /* White text color for header */
+            padding: 8px;
+        }
+        .result-table td {
+            padding: 8px;
+        }
+        .result-table tr:nth-child(odd) {
+            background-color: #bce6bb; /* Alternate row color */
+        }
+    </style>
+</head>
+<body>
+    <h1>Analysis Result</h1>
+    <table class="result-table">
+        <tr>
+            <th>Information</th>
+            <th>Count</th>
+        </tr>
+        <tr>
+            <td>URL</td>
+            <td>{{ url }}</td>
+        </tr>
+        <tr>
+            <td>Number of Sentences</td>
+            <td>{{ num_sentences }}</td>
+        </tr>
+        <tr>
+            <td>Number of Words</td>
+            <td>{{ num_words }}</td>
+        </tr>
+    </table>
+    <h2>POS Tag Counts:</h2>
+    <table class="result-table">
+        {% set odd_even = 'odd' %}
+        {% for pos_tag, count in pos_counts.items() %}
+            <tr class="{{ odd_even }}">
+                <td>{{ pos_tag }}</td>
+                <td>{{ count }}</td>
+            </tr>
+            {% set odd_even = 'even' if odd_even == 'odd' else 'odd' %}
+        {% endfor %}
+    </table>
+</body>
+</html> -->
+<!-- 
+    
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stored Data</title>
+</head>
+<body>
+    <h1>Stored Data</h1>
+
+    {% if stored_data %}
+    <table border="1">
+        <tr>
+            <th>URL</th>
+            <th>Number of Words</th>
+            <th>Number of Sentences</th>
+            <th>Post Tags</th>
+        </tr>
+        {% for item in stored_data %}
+        <tr>
+            <td>{{ item[0] }}</td>
+            <td>{{ item[1] }}</td>
+            <td>{{ item[2] }}</td>
+            <td>{{ item[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('portal') }}">Go back to the form</a>
+    {% else %}
+    <p>No stored data available.</p>
+    {% endif %}
+</body>
+</html> -->
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stored Data</title>
+</head>
+
+</body>
+    <h1>Stored Data</h1>
+    <table border="2">
+        <tr>
+            <th>Sr.no</th>
+            <th>Url</th>
+            <th>Number of Words</th>
+            <th>Number of Sentences</th>
+            <th>Post Tags</th>
+            <th>keyword_dict</th>
+            
+        </tr>
+        {% for row in data %}
+        <tr>
+           <td>{{ loop.index }}</td>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+            <td>{{ row[4] }}</td>
+          
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('portal') }}">Go back to the form</a>
+</body>
+</html>
+ -->
+<!-- 
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stored Data</title>
+</head>
+<body>
+    <h1>Stored Data</h1>
+    <table border="2">
+        <tr>
+            <th>Sr.no</th>
+            <th>Url</th>
+            <th>Number of Words</th>
+            <th>Number of Sentences</th>
+            <th>Post Tags</th>
+            <th>keywords_frequency</th>
+            <th>Image count </th>
+            <th>Headings_used</th>
+        </tr>
+        {% for row in data %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+            <td>{{ row[4] }}</td>
+            <td>{{ row[5] }}</td>
+            <td>{{ row[6] }}</td>
+            <td>{{ row[7] }}</td>
+           
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('portal') }}">Go back to the form</a>
+</body>
+</html>
+ -->
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stored Data</title>
+</head>
+<body>
+    <h1>Stored Data</h1>
+    <table border="2">
+        <tr>
+            <th>Sr.no</th>
+            <th>Url</th>
+            <th>Number of Words</th>
+            <th>Number of Sentences</th>
+            <th>Post Tags</th>
+            <th>Keywords Frequency</th>
+            <th>Image Count </th>
+            <th>Headings Used</th>
+        </tr>
+        {% for row in data %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+            <td>{{ row[4] }}</td>
+            <td>{{ row[5] }}</td>
+            <td>{{ row[6] }}</td>
+            <td>{{ row[7] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('portal') }}">Go back to the form</a>
+</body>
+</html>
+
